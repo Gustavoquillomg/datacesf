@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>DataVotoCesf | Administração</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-icon">DV</span>
+      <span>DataVoto<span class="blue">Cesf</span></span>
+    </a>
+    <a class="nav-link" href="index.html">← Voltar à pesquisa</a>
+  </header>
+
+  <main class="admin-container">
+
+    <section id="login-panel" class="login-card">
+      <p class="eyebrow">ACESSO RESTRITO</p>
+      <h1>Painel administrativo</h1>
+      <p class="muted">
+        Entre com a conta administrativa cadastrada no Firebase.
+      </p>
+
+      <form id="login-form">
+        <div class="field">
+          <label for="admin-email">E-mail</label>
+          <input id="admin-email" type="email"
+                 autocomplete="username" required>
+        </div>
+
+        <div class="field">
+          <label for="admin-password">Senha</label>
+          <input id="admin-password" type="password"
+                 autocomplete="current-password" required>
+        </div>
+
+        <button class="button primary" type="submit">
+          Entrar no painel →
+        </button>
+
+        <p id="login-message" class="message"
+           role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="dashboard" hidden>
+      <div class="dashboard-heading">
+        <div>
+          <p class="eyebrow">VISÃO GERAL</p>
+          <h1>Resultados da pesquisa</h1>
+          <p class="muted">Estatísticas consolidadas das respostas.</p>
+        </div>
+
+        <button id="logout-button" class="button secondary" type="button">
+          Sair
+        </button>
+      </div>
+
+      <p id="dashboard-message" class="message"
+         role="status" aria-live="polite"></p>
+
+      <div class="metric-grid">
+        <article class="metric-card">
+          <span class="metric-label">Total de respostas</span>
+          <strong id="total-respostas">0</strong>
+          <span class="metric-caption">Respostas registradas</span>
+        </article>
+
+        <article class="metric-card">
+          <span class="metric-label">Média de moradores</span>
+          <strong id="media-moradores">0</strong>
+          <span class="metric-caption">Por residência</span>
+        </article>
+
+        <article class="metric-card">
+          <span class="metric-label">Média de trabalhadores</span>
+          <strong id="media-trabalhadores">0</strong>
+          <span class="metric-caption">Por residência</span>
+        </article>
+      </div>
+
+      <div class="charts-grid">
+        <article class="chart-card">
+          <h2>Faixa etária</h2>
+          <p class="muted">Distribuição das respostas</p>
+          <div class="chart-wrap">
+            <canvas id="idade-chart" role="img"
+                    aria-label="Gráfico de faixa etária"></canvas>
+          </div>
+        </article>
+
+        <article class="chart-card">
+          <h2>Rotina atual</h2>
+          <p class="muted">Estudo e trabalho</p>
+          <div class="chart-wrap">
+            <canvas id="rotina-chart" role="img"
+                    aria-label="Gráfico de rotina"></canvas>
+          </div>
+        </article>
+
+        <article class="chart-card">
+          <h2>Prioridades do município</h2>
+          <p class="muted">Áreas escolhidas pelos participantes</p>
+          <div class="chart-wrap">
+            <canvas id="pautas-chart" role="img"
+                    aria-label="Gráfico de prioridades"></canvas>
+          </div>
+        </article>
+
+        <article class="chart-card">
+          <h2>Certeza do voto</h2>
+          <p class="muted">Respostas consolidadas</p>
+          <div class="chart-wrap">
+            <canvas id="voto-chart" role="img"
+                    aria-label="Gráfico de certeza do voto"></canvas>
+          </div>
+        </article>
+      </div>
+
+      <p>
+        <button id="refresh-button" class="button secondary" type="button">
+          ↻ Atualizar dados
+        </button>
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    DataVotoCesf · Acesso administrativo
+  </footer>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

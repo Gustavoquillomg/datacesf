@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pesquisa escolar sobre a comunidade de Campo Largo.">
+  <title>DataVotoCesf | Pesquisa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-icon">DV</span>
+      <span>DataVoto<span class="blue">Cesf</span></span>
+    </a>
+
+    <a class="nav-link" href="admin.html">Área administrativa ↗</a>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">PROJETO ESCOLAR · CAMPO LARGO</p>
+
+      <h1>Queremos ouvir<br><span>a sua opinião.</span></h1>
+
+      <p>
+        Esta pesquisa faz parte de um projeto dos alunos de
+        Desenvolvimento de Sistemas do Colégio Sagrada Família.
+        Suas respostas vão ajudar a entender melhor a realidade
+        e as prioridades da nossa comunidade.
+      </p>
+
+      <div class="notice">
+        <span aria-hidden="true">🔒</span>
+        Sua participação é voluntária. Não informe seu nome,
+        telefone ou endereço completo.
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-heading">
+        <p class="eyebrow">QUESTIONÁRIO</p>
+        <h2>Vamos começar?</h2>
+        <p class="muted">
+          Responda às perguntas abaixo. Os campos com * são obrigatórios.
+        </p>
+      </div>
+
+      <form id="survey-form">
+        <fieldset>
+          <legend>01. Sobre você</legend>
+
+          <div class="field">
+            <label for="faixaEtaria">Qual é a sua faixa etária? *</label>
+            <select id="faixaEtaria" name="faixaEtaria" required>
+              <option value="">Selecione uma opção</option>
+              <option>Até 15 anos</option>
+              <option>16 a 17 anos</option>
+              <option>18 a 24 anos</option>
+              <option>25 a 34 anos</option>
+              <option>35 a 44 anos</option>
+              <option>45 a 59 anos</option>
+              <option>60 anos ou mais</option>
+              <option>Prefiro não informar</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="bairro">Em qual bairro você mora?</label>
+            <input
+              type="text"
+              id="bairro"
+              name="bairro"
+              maxlength="80"
+              placeholder="Ex.: Centro"
+            >
+            <small>Opcional. Não informe o endereço completo.</small>
+          </div>
+
+          <div class="field">
+            <label for="rotina">Atualmente, você... *</label>
+            <select id="rotina" name="rotina" required>
+              <option value="">Selecione uma opção</option>
+              <option>Estuda</option>
+              <option>Trabalha</option>
+              <option>Estuda e trabalha</option>
+              <option>Nenhuma das opções</option>
+              <option>Prefiro não informar</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="rendaFamiliar">Qual é a renda mensal da sua família? *</label>
+            <select id="rendaFamiliar" name="rendaFamiliar" required>
+              <option value="">Selecione uma faixa</option>
+              <option>Até 1 salário mínimo</option>
+              <option>De 1 a 2 salários mínimos</option>
+              <option>De 2 a 4 salários mínimos</option>
+              <option>De 4 a 6 salários mínimos</option>
+              <option>Acima de 6 salários mínimos</option>
+              <option>Prefiro não informar</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>02. Sobre sua casa</legend>
+
+          <div class="field">
+            <label for="moradores">Quantas pessoas moram com você, contando você? *</label>
+            <input
+              type="number"
+              id="moradores"
+              name="moradores"
+              min="1"
+              max="30"
+              step="1"
+              required
+              placeholder="Ex.: 4"
+            >
+          </div>
+
+          <div class="field">
+            <label for="trabalhadores">Quantas dessas pessoas trabalham? *</label>
+            <input
+              type="number"
+              id="trabalhadores"
+              name="trabalhadores"
+              min="0"
+              max="30"
+              step="1"
+              required
+              placeholder="Ex.: 2"
+            >
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>03. Opinião e prioridades</legend>
+
+          <div class="field">
+            <label for="certezaVoto">Como você se sente em relação ao voto? *</label>
+            <select id="certezaVoto" name="certezaVoto" required>
+              <option value="">Selecione uma opção</option>
+              <option>Muito decidido</option>
+              <option>Mais ou menos decidido</option>
+              <option>Ainda indeciso</option>
+              <option>Não pretendo responder</option>
+              <option>Não se aplica a mim</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="pauta">Qual área deveria ser prioridade em Campo Largo? *</label>
+            <select id="pauta" name="pauta" required>
+              <option value="">Selecione uma área</option>
+              <option>Saúde</option>
+              <option>Educação</option>
+              <option>Segurança pública</option>
+              <option>Emprego e renda</option>
+              <option>Transporte e mobilidade</option>
+              <option>Habitação</option>
+              <option>Meio ambiente</option>
+              <option>Cultura, esporte e lazer</option>
+              <option>Infraestrutura e saneamento</option>
+              <option>Outra</option>
+              <option>Prefiro não responder</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="outraPauta">Se escolheu "Outra", qual seria? (opcional)</label>
+            <input
+              type="text"
+              id="outraPauta"
+              name="outraPauta"
+              maxlength="120"
+              placeholder="Escreva aqui"
+            >
+          </div>
+        </fieldset>
+
+        <div class="consent">
+          <input type="checkbox" id="consentimento" required>
+          <label for="consentimento">
+            Entendi a finalidade escolar da pesquisa e concordo em
+            participar voluntariamente. Não incluirei informações que
+            identifiquem pessoas. *
+          </label>
+        </div>
+
+        <p class="muted privacy">
+          As respostas serão usadas para fins de análise estatística
+          deste projeto escolar. Esta não é uma pesquisa eleitoral oficial.
+          A coleta e a divulgação devem seguir a aprovação da escola.
+        </p>
+
+        <button class="button primary" id="submit-button" type="submit">
+          Enviar respostas
+        </button>
+
+        <p
+          id="form-message"
+          class="message"
+          role="status"
+          aria-live="polite"
+        ></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>DataVotoCesf · Projeto escolar de Desenvolvimento de Sistemas</p>
+    <p>Colégio Sagrada Família · Campo Largo/PR</p>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
